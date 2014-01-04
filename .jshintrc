@@ -18,6 +18,7 @@
   "smarttabs": true,
   "globals": {
     "angular": false,
+    "$": false,
     "it": false,
     "expect": false,
     "beforeEach": false,

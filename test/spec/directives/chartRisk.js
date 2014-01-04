@@ -26,5 +26,6 @@ describe('Directive: chartRisk', function() {
 
   it('should have the correct amount of albums in the list', function() {
     expect(element.find('.high').css('width')).toBe('25%');
+    expect($(element.find('.high'))).toHaveCss({'width': '25%'});
   });
 });
