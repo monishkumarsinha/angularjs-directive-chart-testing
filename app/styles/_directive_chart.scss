@@ -1,0 +1,32 @@
+.charts {
+  margin-top: 18px;
+
+  .chart {
+    margin-top: 12px;
+  }
+}
+
+.risk-bar {
+  $basicBarColor: #ccc;
+
+  display: table;
+  width: 100%;
+
+  .bar {
+    display: table-cell;
+    padding: 4px;
+    text-align: center;
+  }
+
+  .high {
+    background-color: $basicBarColor;
+  }
+
+  .medium {
+    background-color: lighten($basicBarColor, 10);
+  }
+
+  .low {
+    background-color: lighten($basicBarColor, 20);
+  }
+}

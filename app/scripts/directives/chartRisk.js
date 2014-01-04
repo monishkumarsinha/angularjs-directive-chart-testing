@@ -71,22 +71,17 @@ angular.module('directiveExampleApp')
         var totalValue = getTotalValue(riskSummaryData);
 
         for (riskType in riskSummaryData) {
-          if (riskSummaryData.hasOwnProperty(riskType)) {
-            if (totalValue === 0) {
-              blocks[riskType].blockEl.css('width', '');
-              return;
-            }
-
-            setWidthHelper();
-            setElementText();
+          if (riskSummaryData.hasOwnProperty(riskType) && blocks[riskType]) {
+            setElementWidth(riskType);
+            setElementText(riskType);
           }
         }
 
-        function setElementText() {
+        function setElementText(riskType) {
           blocks[riskType].blockCostEl.text(roundMillion(riskSummaryData[riskType]));
         }
 
-        function setWidthHelper() {
+        function setElementWidth(riskType) {
           var width = getWidth(riskSummaryData[riskType], totalValue);
 
           if (!width) {
@@ -127,7 +122,7 @@ angular.module('directiveExampleApp')
         var riskType;
 
         for (riskType in riskSummaryData) {
-          if (riskSummaryData.hasOwnProperty(riskType)) {
+          if (riskSummaryData.hasOwnProperty(riskType) && blocks[riskType]) {
             totalValue += riskSummaryData[riskType];
           }
         }

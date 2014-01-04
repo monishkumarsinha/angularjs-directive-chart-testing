@@ -1,9 +1,18 @@
 <div class="hero-unit">
-  <h1>'Allo, 'Allo!</h1>
-  <p>You now have</p>
-  <ul>
-      <li ng-repeat="thing in awesomeThings">{{thing}}</li>
-  </ul>
-  <p>installed.</p>
-  <h3>Enjoy coding! - Yeoman</h3>
+  <h1>Chart risk directive!</h1>
+
+  <div class="charts">
+    <ul>
+      <li class="chart" data-ng-repeat="risk in riskData">
+        <p>
+          <span data-ng-repeat="(risk, value) in risk">
+            {{risk}} - {{ value | number:0 }} &nbsp; &nbsp; &nbsp;
+          </span>
+        </p>
+
+        <div style="width: 300px" data-chart-risk="risk"></div>
+
+      </li>
+    </ul>
+  </div>
 </div>
