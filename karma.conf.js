@@ -1,12 +1,16 @@
 module.exports = function (config) {
+
+  'use strict';
+
   config.set({
     // base path, that will be used to resolve files and exclude
     basePath: 'app',
 
-    frameworks: ["jasmine"],
+    frameworks: ['jasmine'],
 
     // list of files / patterns to load in the browser
     files: [
+      'components/jquery/jquery.js',
       'components/angular/angular.js',
       'components/angular-mocks/angular-mocks.js',
       'scripts/*.js',
